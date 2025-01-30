@@ -32,12 +32,32 @@ export default function Header() {
     const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
     const [isScrolled, setIsScrolled] = useState(false);
 
+    // Debounced scroll handler for better performance
     useEffect(() => {
+        let timeoutId: NodeJS.Timeout;
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
+            if (timeoutId) clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                setIsScrolled(window.scrollY > 20);
+            }, 100);
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (timeoutId) clearTimeout(timeoutId);
+        };
+    }, []);
+
+    // Handle escape key to close mobile menu
+    useEffect(() => {
+        const handleEscape = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                setIsMobileNavOpen(false);
+                setActiveSubmenu(null);
+            }
+        };
+        window.addEventListener('keydown', handleEscape);
+        return () => window.removeEventListener('keydown', handleEscape);
     }, []);
 
     // Prevent body scroll when mobile menu is open
@@ -49,8 +69,8 @@ export default function Header() {
         }
     }, [isMobileNavOpen]);
 
-    const headerClass = `fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/90 backdrop-blur-lg py-2' : 'bg-transparent py-4'
+    const headerClass = `fixed w-full z-[100] transition-all duration-300 ${
+        isScrolled ? 'bg-black/90 backdrop-blur-lg py-2 shadow-lg' : 'bg-transparent py-4'
     }`;
 
     const SubmenuContent = ({ items }: { items: Array<{ href: string; label: string }> }) => (
@@ -58,13 +78,14 @@ export default function Header() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className="absolute top-full left-0 w-48 bg-white/10 backdrop-blur-lg rounded-lg shadow-xl p-2"
+            transition={{ duration: 0.2 }}
+            className="absolute top-full left-0 w-48 bg-white/10 backdrop-blur-lg rounded-lg shadow-xl p-2 border border-white/10"
         >
             {items.map((item) => (
                 <Link
                     key={item.href}
                     href={item.href}
-                    className="block px-4 py-2 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-md transition-all"
+                    className="block px-4 py-2 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-white/20"
                 >
                     {item.label}
                 </Link>
@@ -81,8 +102,12 @@ export default function Header() {
                         animate={{ opacity: 1 }}
                         className="flex-shrink-0"
                     >
-                        <Link href="/" className="text-2xl font-bold text-white hover:opacity-90 transition-all">
-                            The Prime Infra
+                        <Link 
+                            href="/" 
+                            className="text-2xl font-bold text-white hover:opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg"
+                            aria-label="Home"
+                        >
+                            The <span className='text-[#edc135]'>Prime</span> Infra
                         </Link>
                     </motion.div>
 
@@ -94,11 +119,14 @@ export default function Header() {
                                     className="flex items-center cursor-pointer"
                                     onHoverStart={() => setActiveSubmenu(item.href)}
                                     onHoverEnd={() => setActiveSubmenu(null)}
+                                    role="button"
+                                    tabIndex={0}
+                                    aria-expanded={activeSubmenu === item.href}
                                 >
-                                    <span className="text-gray-200 hover:text-white transition-colors flex items-center gap-1">
+                                    <span className="text-gray-200 hover:text-white transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg px-2 py-1">
                                         {item.label}
                                         {item.submenu && (
-                                            <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                                            <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" aria-hidden="true" />
                                         )}
                                     </span>
                                     {item.submenu && activeSubmenu === item.href && (
@@ -109,20 +137,24 @@ export default function Header() {
                                 </motion.div>
                             </div>
                         ))}
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="px-6 py-2 bg-white text-black rounded-full font-medium hover:bg-opacity-90 transition-all"
-                        >
-                            Get Started
-                        </motion.button>
+                        <Link href="/login">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-6 py-2.5 bg-white text-black rounded-lg font-medium hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-white/20 text-sm md:text-base"
+                            >
+                                Login
+                            </motion.button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <motion.button
                         whileTap={{ scale: 0.9 }}
-                        className="md:hidden text-white z-50"
+                        className="md:hidden text-white z-[110] p-2 hover:bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/20"
                         onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+                        aria-label={isMobileNavOpen ? "Close menu" : "Open menu"}
+                        aria-expanded={isMobileNavOpen}
                     >
                         {isMobileNavOpen ? <X size={24} /> : <Menu size={24} />}
                     </motion.button>
@@ -136,12 +168,18 @@ export default function Header() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: "-100%" }}
                             transition={{ type: "tween", duration: 0.3 }}
-                            className="fixed inset-0 top-0 left-0 w-full h-screen bg-black md:hidden overflow-y-auto z-40"
+                            className="fixed inset-0 top-0 left-0 w-full h-screen bg-black md:hidden overflow-y-auto z-[105]"
+                            role="dialog"
+                            aria-modal="true"
                         >
-                            <div className="flex flex-col h-full">
+                            <div className="flex flex-col h-full pt-20">
                                 {/* Logo Section in Mobile Menu */}
                                 <div className="p-6 border-b border-gray-800">
-                                    <Link href="/" className="text-2xl font-bold text-white">
+                                    <Link 
+                                        href="/" 
+                                        className="text-2xl font-bold text-white focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg"
+                                        onClick={() => setIsMobileNavOpen(false)}
+                                    >
                                         The Prime Infra
                                     </Link>
                                 </div>
@@ -153,7 +191,8 @@ export default function Header() {
                                             <div key={item.href} className="flex flex-col">
                                                 <button
                                                     onClick={() => setActiveSubmenu(activeSubmenu === item.href ? null : item.href)}
-                                                    className="text-xl text-gray-200 hover:text-white py-2 flex items-center justify-between"
+                                                    className="text-xl text-gray-200 hover:text-white py-2 flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg px-2"
+                                                    aria-expanded={activeSubmenu === item.href}
                                                 >
                                                     {item.label}
                                                     {item.submenu && (
@@ -161,6 +200,7 @@ export default function Header() {
                                                             className={`w-5 h-5 transition-transform ${
                                                                 activeSubmenu === item.href ? 'rotate-180' : ''
                                                             }`}
+                                                            aria-hidden="true"
                                                         />
                                                     )}
                                                 </button>
@@ -176,7 +216,8 @@ export default function Header() {
                                                                 <Link
                                                                     key={subItem.href}
                                                                     href={subItem.href}
-                                                                    className="block text-lg text-gray-300 hover:text-white py-2"
+                                                                    className="block text-lg text-gray-300 hover:text-white py-2 focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg px-2"
+                                                                    onClick={() => setIsMobileNavOpen(false)}
                                                                 >
                                                                     {subItem.label}
                                                                 </Link>
@@ -189,14 +230,17 @@ export default function Header() {
                                     </div>
                                 </div>
 
-                                {/* Bottom Section with CTA */}
+                                {/* Bottom Section with Login Button */}
                                 <div className="p-6 border-t border-gray-800">
-                                    <motion.button
-                                        whileTap={{ scale: 0.95 }}
-                                        className="w-full px-6 py-4 bg-white text-black rounded-full text-lg font-medium hover:bg-opacity-90 transition-all"
-                                    >
-                                        Get Started
-                                    </motion.button>
+                                    <Link href="/login" className="block w-full">
+                                        <motion.button
+                                            whileTap={{ scale: 0.95 }}
+                                            className="w-full px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-white/20 text-base"
+                                            onClick={() => setIsMobileNavOpen(false)}
+                                        >
+                                            Login
+                                        </motion.button>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>
