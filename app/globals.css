@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/inter/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  src: url('/assets/fonts/source-sans/SourceSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,5 +31,10 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Set Source Sans as default for all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans', sans-serif;
 }
