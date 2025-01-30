@@ -1,11 +1,24 @@
 "use client"
 import React from 'react';
 import { motion } from 'framer-motion';
+import { MessageCircle } from 'lucide-react';
 
 export default function LandingPage() {
     return (
         <main className="min-h-screen">
             <section className="relative h-screen bg-[#12192b] overflow-hidden">
+                {/* WhatsApp Floating Button */}
+                <motion.a
+                    href="https://wa.me/918057235806"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="fixed bottom-8 right-8 z-50 bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                >
+                    <MessageCircle className="w-6 h-6 text-white" />
+                </motion.a>
+
                 {/* Animated Background Shapes */}
                 <motion.div
                     animate={{
