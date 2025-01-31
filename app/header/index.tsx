@@ -79,7 +79,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 w-48 bg-white/10 backdrop-blur-lg rounded-lg shadow-xl p-2 border border-white/10"
+            className="absolute top-full left-0 w-48 bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d] rounded-lg shadow-xl p-2 border border-gray-700"
         >
             {items.map((item) => (
                 <Link
@@ -168,7 +168,7 @@ export default function Header() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: "-100%" }}
                             transition={{ type: "tween", duration: 0.3 }}
-                            className="fixed inset-0 top-0 left-0 w-full h-screen bg-black md:hidden overflow-y-auto z-[105]"
+                            className="fixed inset-0 top-0 left-0 w-full h-screen bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d] md:hidden overflow-y-auto z-[105]"
                             role="dialog"
                             aria-modal="true"
                         >
