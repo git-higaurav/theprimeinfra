@@ -230,7 +230,7 @@ export default function Header() {
                                     </div>
                                 </div>
 
-                                {/* Bottom Section with Login Button */}
+                                {/* Bottom Section with      Button */}
                                 <div className="p-6 border-t border-gray-800">
                                     <Link href="/login" className="block w-full">
                                         <motion.button
