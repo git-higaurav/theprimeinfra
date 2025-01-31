@@ -14,27 +14,59 @@ interface ProjectCard {
 const projects: ProjectCard[] = [
     {
         id: 1,
-        title: "Urban Development Project",
-        description: "A state-of-the-art urban development featuring modern infrastructure and sustainable design.",
-        image: "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg",
-        location: "Metro Manila",
+        title: "Park Avenue",
+        description: "2'3'4 BHK aprtment housing society , near malsi dear park, main mussouri road.",
+        image: "https://lh3.googleusercontent.com/p/AF1QipOrrX4qef40il4Q7G51cFNfR1EIcmCA_wlbSANz=s1360-w1360-h1020",
+        location: "Dehradun",
         status: "Completed"
     },
     {
         id: 2,
-        title: "Green Energy Initiative",
-        description: "Renewable energy project powering thousands of homes with clean, sustainable power.",
-        image: "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg",
-        location: "Cebu", 
-        status: "Ongoing"
+        title: "Pacific golf ",
+        description: "1,2,3 & penthouse Apartments Near sahastradhara, sahastradhara road",
+        image: "https://lh3.googleusercontent.com/p/AF1QipN8mCMKz9deHQSZ4l1ttKjOD3SbtUwVMA27qu1C=s1360-w1360-h1020",
+        location: "Dehradun", 
+        status: "Completed"
     },
     {
         id: 3,
-        title: "Transport Hub",
-        description: "Modern transportation infrastructure connecting key business districts.",
-        image: "https://images.pexels.com/photos/2310885/pexels-photo-2310885.jpeg",
-        location: "Davao",
-        status: "Upcoming"
+        title: "Forest residency",
+        description: "Studio, 2, 3 bhk aprtment and commercial space.Main mussurie road near dear malsi park. ",
+        image: "https://newprojects.99acres.com/projects/tak_build_tech/tak_the_forest_residency/images/aerial.jpg",
+        location: "Dehradun",
+        status: "Completed"
+    },
+    {
+        id: 4,
+        title: "Mega county",
+        description: "2,3 bhk apartment Main mussurie road, near DIT university. ",
+        image: "https://lh3.googleusercontent.com/p/AF1QipMbI46MV0iylMA0NEU0MX6WJIz-OhiQ6hgzQ285=s1360-w1360-h1020",
+        location: "Dehradun",
+        status: "Completed"
+    },
+    {
+        id: 5,
+        title: "Doon square mall ",
+        description: "Studio, service aparrtment, shops, food court and Hotel space IT park, sahastradhara road. ",
+        image: "https://www.supertechlimited.com/images/doon-square/banner.jpg",
+        location: "Dehradun",
+        status: "Completed"
+    },
+    {
+        id: 6,
+        title: "ATS heavenly foothills",
+        description: "ATS heavenly foothills  platting housing society,Sahastradhara road",
+        image: "https://lh3.googleusercontent.com/p/AF1QipPV24fyT-3xio3eIkhLQcvh5s03pBhJmoCtxrPo=s1360-w1360-h1020",
+        location: "Dehradun",
+        status: "Completed"
+    },
+    {
+        id: 7,
+        title: "Panache valley ",
+        description: "Plotting housing society Sahastradhara road, ",
+        image: "https://lh3.googleusercontent.com/p/AF1QipOvCOTBBPfsHd97IFOqdK2ybb68uxWpsYiNPCw=s1360-w1360-h1020",
+        location: "Dehradun",
+        status: "Completed"
     }
 ];
 
