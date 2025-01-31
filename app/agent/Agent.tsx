@@ -1,25 +1,28 @@
 "use client"
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import manojImage from '../assets/agents/manoj.png';
+import deepakImage from "../assets/agents/deepak.png"
+import sweetyImage from "../assets/agents/sweety.png"
 
 const teamMembers = [
     {
         name: "Manoj Jayant",
-        role: "Senior Real Estate Agent",
+        role: "Sales Manager",
         description: "10+ years of experience in Dehradun real estate market",
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=387&auto=format&fit=crop"
+        image: manojImage
     },
     {
-        name: "Priya Verma", 
-        role: "Property Consultant",
+        name: "Deepak", 
+        role: "Sales Executive",
         description: "Specializes in residential properties and client relations",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=388&auto=format&fit=crop"
+        image: deepakImage
     },
     {
-        name: "Amit Kumar",
-        role: "Real Estate Advisor",
+        name: "Sweety Sharma",
+        role: "Sales Executive",
         description: "Expert in property valuation and market analysis",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=870&auto=format&fit=crop"
+        image: sweetyImage
     }
 ];
 
