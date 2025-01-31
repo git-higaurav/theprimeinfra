@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const teamMembers = [
     {
-        name: "Rahul Sharma",
+        name: "Manoj Jayant",
         role: "Senior Real Estate Agent",
         description: "10+ years of experience in Dehradun real estate market",
         image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=387&auto=format&fit=crop"
@@ -25,8 +25,46 @@ const teamMembers = [
 
 export default function Agent() {
     return (
-        <section className="py-16 px-4 bg-gray-50">
-            <div className="container mx-auto">
+        <section className="relative py-16 px-4 bg-gray-50 overflow-hidden">
+            {/* Animated Background Shapes */}
+            <motion.div
+                animate={{
+                    rotate: [0, 360],
+                    scale: [1, 1.2, 1],
+                }}
+                transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear"
+                }}
+                className="absolute top-20 right-20 w-64 h-64 rounded-full border border-[#edc135]/10"
+            />
+            <motion.div
+                animate={{
+                    rotate: [360, 0],
+                    scale: [1, 1.3, 1],
+                }}
+                transition={{
+                    duration: 15,
+                    repeat: Infinity,
+                    ease: "linear"
+                }}
+                className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full border border-[#edc135]/10"
+            />
+            <motion.div
+                animate={{
+                    x: [-10, 10, -10],
+                    y: [-10, 10, -10],
+                }}
+                transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "linear"
+                }}
+                className="absolute top-1/2 left-1/4 w-32 h-32 bg-[#edc135]/5 rounded-lg"
+            />
+
+            <div className="container mx-auto relative z-10">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">

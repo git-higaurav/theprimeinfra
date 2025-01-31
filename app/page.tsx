@@ -3,7 +3,7 @@ import LandingPage from "./landing-page";
 import Features from "./features/Features";
 import AboutUs from "./about-us";
 import Agent from "./agent/Agent";
-
+import ContactUs from "./contact-us";
 export default function Home() {
   return (
     <div>
@@ -12,6 +12,7 @@ export default function Home() {
       <Features/>
       <AboutUs/>
       <Agent/>
+      <ContactUs/>
     </div>
   );
 }
