@@ -94,13 +94,15 @@ export default function LandingPage() {
                                     >
                                         Search Properties
                                     </motion.button>
+                                    <Link href="/projects">
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         className="px-8 py-4 bg-transparent text-[#edc135] border-2 border-[#edc135] rounded-full font-semibold text-base hover:bg-[#edc135]/10 transition-all focus:outline-none focus:ring-2 focus:ring-[#edc135]/20"
                                     >
-                                        <Link href="/projects">Explore Ongoing Projects</Link>
+                                       Explore Ongoing Projects
                                     </motion.button>
+                                    </Link>
                                 </div>
                             </motion.div>
 

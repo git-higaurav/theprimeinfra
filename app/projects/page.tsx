@@ -19,24 +19,24 @@ interface OngoingProject {
 
 const projectDetails: OngoingProject = {
     id: 1,
-    title: "Skyline Residences",
+    title: "Kings Residency",
     description: "Experience luxury living at its finest with our newest development featuring stunning architecture and world-class amenities.",
-    location: "Silicon Valley, Bangalore",
+    location: "Main Rajpur Road, Dehradun",
     images: [
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070",
-        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053",
-        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070",
-        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070",
-        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053",
-        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070"  
+        "/projects/1.png",
+        "/projects/2.png",
+        "/projects/3.png",
+        "/projects/4.png",
+        "/projects/5.png",
+        "/projects/6.png"  
     ],
     features: [
-        "Smart Home Automation",
-        "Infinity Pool", 
-        "Private Theater",
-        "Rooftop Garden",
-        "EV Charging Stations",
-        "Concierge Service"
+        "Security",
+        "Covered Car Parking", 
+        "Prime Location",
+        "Gated Society",
+        "CCTV Surveillance",
+        "Connected Balconies"
     ],
     amenities: [
         "Spa & Wellness Center",
@@ -52,11 +52,19 @@ const projectDetails: OngoingProject = {
         "Security": "Biometric Access",
         "Connectivity": "High-Speed Fiber Optic"
     },
-    priceRange: "₹2.5Cr - ₹5.8Cr",
-    completionDate: "March 2025"
+    priceRange: "Starting from ₹1.5Cr",
+    completionDate: "Completed"
 };
 
 export default function OnGoingProject() {
+    const handleWhatsAppClick = () => {
+        window.open('https://wa.me/918057235806', '_blank');
+    };
+
+    const handleDirectionsClick = () => {
+        window.open('https://www.google.com/maps/dir//Kings+Residency/@30.384069,78.089316,21z', '_blank');
+    };
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
@@ -155,40 +163,63 @@ export default function OnGoingProject() {
                     <h2 className="text-2xl font-bold text-white mb-6">Property Layout</h2>
                     <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700">
                         <Image 
-                            src="https://images.unsplash.com/photo-1626178793926-22b28830aa30?q=80&w=2070"
+                            src="/projects/plan.png"
                             alt="Property Layout Map"
                             width={1200}
                             height={800}
                             className="w-full h-auto rounded-2xl"
                             unoptimized={true}
                         />
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                            <div className="text-gray-300">
-                                <h3 className="text-emerald-400 font-semibold mb-2">North Wing</h3>
-                                <ul className="list-disc list-inside">
-                                    <li>Premium Apartments</li>
-                                    <li>Rooftop Garden</li>
-                                    <li>Sky Lounge</li>
-                                </ul>
-                            </div>
-                            <div className="text-gray-300">
-                                <h3 className="text-emerald-400 font-semibold mb-2">Central Area</h3>
-                                <ul className="list-disc list-inside">
-                                    <li>Swimming Pool</li>
-                                    <li>Clubhouse</li>
-                                    <li>Landscaped Gardens</li>
-                                </ul>
-                            </div>
-                            <div className="text-gray-300">
-                                <h3 className="text-emerald-400 font-semibold mb-2">South Wing</h3>
-                                <ul className="list-disc list-inside">
-                                    <li>Luxury Suites</li>
-                                    <li>Spa & Wellness</li>
-                                    <li>Private Theater</li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
+                </motion.div>
+
+                {/* Google Maps Location */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="w-full mb-16"
+                >
+                    <h2 className="text-2xl font-bold text-white mb-6">Location</h2>
+                    <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700">
+                        <div className="w-full rounded-2xl overflow-hidden">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d575.8714034280464!2d78.08931610624131!3d30.384069256624098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d798459d27f3%3A0xb6cd28b09fe48000!2sKings%20Residency!5e1!3m2!1sen!2sin!4v1738397366218!5m2!1sen!2sin"
+                                width="100%"
+                                height="450"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
+                        <button
+                            onClick={handleDirectionsClick}
+                            className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg transition-colors duration-300"
+                        >
+                            Get Directions
+                        </button>
+                    </div>
+                </motion.div>
+
+                {/* Action Buttons */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
+                >
+                    <a
+                        href="https://drive.google.com/uc?export=download&id=1FogTQIQsOQVzdqN26I0bdGkdXOMh7d0p"
+                        download
+                        className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300 text-center"
+                    >
+                        Download Brochure
+                    </a>
+                    <button
+                        onClick={handleWhatsAppClick}
+                        className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
+                    >
+                        Contact Us on WhatsApp
+                    </button>
                 </motion.div>
             </div>
         </div>

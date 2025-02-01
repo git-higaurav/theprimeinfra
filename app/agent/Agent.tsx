@@ -12,11 +12,11 @@ const teamMembers = [
         email: "sales@theprimeinfra.com"
     },
     {
-        name: "Deepak",
+        name: "Deepak  kathayat",
         role: "Sales Executive",
         description: "Specializes in residential properties and client relations", 
         image: "/agents/deepak.png",
-        phone: "+91 8057235806",
+        phone: "+91 8979894770",
         email: "sales@theprimeinfra.com"
     },
     {
