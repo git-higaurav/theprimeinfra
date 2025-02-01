@@ -16,7 +16,7 @@ const projects: ProjectCard[] = [
         id: 1,
         title: "Park Avenue",
         description: "2'3'4 BHK aprtment housing society , near malsi dear park, main mussouri road.",
-        image: "https://lh3.googleusercontent.com/p/AF1QipOrrX4qef40il4Q7G51cFNfR1EIcmCA_wlbSANz=s1360-w1360-h1020",
+        image: "./assets/ParkAvenue.jpg",
         location: "Dehradun",
         status: "Completed"
     },
@@ -24,7 +24,7 @@ const projects: ProjectCard[] = [
         id: 2,
         title: "Pacific golf ",
         description: "1,2,3 & penthouse Apartments Near sahastradhara, sahastradhara road",
-        image: "https://lh3.googleusercontent.com/p/AF1QipN8mCMKz9deHQSZ4l1ttKjOD3SbtUwVMA27qu1C=s1360-w1360-h1020",
+        image: "./assets/Pacific.png",
         location: "Dehradun", 
         status: "Completed"
     },
@@ -32,7 +32,7 @@ const projects: ProjectCard[] = [
         id: 3,
         title: "Forest residency",
         description: "Studio, 2, 3 bhk aprtment and commercial space.Main mussurie road near dear malsi park. ",
-        image: "https://newprojects.99acres.com/projects/tak_build_tech/tak_the_forest_residency/images/aerial.jpg",
+        image: "./assets/Forest.jpg",
         location: "Dehradun",
         status: "Completed"
     },
@@ -40,7 +40,7 @@ const projects: ProjectCard[] = [
         id: 4,
         title: "Mega county",
         description: "2,3 bhk apartment Main mussurie road, near DIT university. ",
-        image: "https://lh3.googleusercontent.com/p/AF1QipMbI46MV0iylMA0NEU0MX6WJIz-OhiQ6hgzQ285=s1360-w1360-h1020",
+        image: "./assets/Mega.png",
         location: "Dehradun",
         status: "Completed"
     },
@@ -48,7 +48,7 @@ const projects: ProjectCard[] = [
         id: 5,
         title: "Doon square mall ",
         description: "Studio, service aparrtment, shops, food court and Hotel space IT park, sahastradhara road. ",
-        image: "https://www.supertechlimited.com/images/doon-square/banner.jpg",
+        image: "./assets/Doonsquare.png",
         location: "Dehradun",
         status: "Completed"
     },
@@ -56,7 +56,7 @@ const projects: ProjectCard[] = [
         id: 6,
         title: "ATS heavenly foothills",
         description: "ATS heavenly foothills  platting housing society,Sahastradhara road",
-        image: "https://lh3.googleusercontent.com/p/AF1QipPV24fyT-3xio3eIkhLQcvh5s03pBhJmoCtxrPo=s1360-w1360-h1020",
+        image: "./assets/ATS.jpg",
         location: "Dehradun",
         status: "Completed"
     },
@@ -64,7 +64,7 @@ const projects: ProjectCard[] = [
         id: 7,
         title: "Panache valley ",
         description: "Plotting housing society Sahastradhara road, ",
-        image: "https://lh3.googleusercontent.com/p/AF1QipOvCOTBBPfsHd97IFOqdK2ybb68uxWpsYiNPCw=s1360-w1360-h1020",
+        image: "./assets/Panache.jpg",
         location: "Dehradun",
         status: "Completed"
     }

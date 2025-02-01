@@ -1,16 +1,13 @@
 "use client"
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import manojImage from '../assets/agents/manoj.png';
-import deepakImage from "../assets/agents/deepak.png"
-import sweetyImage from "../assets/agents/sweety.png"
 
 const teamMembers = [
     {
         name: "Manoj Jayant",
         role: "Sales Manager", 
         description: "10+ years of experience in Dehradun real estate market",
-        image: manojImage,
+        image: "/agents/mj.png",
         phone: "+91 8057235806",
         email: "sales@theprimeinfra.com"
     },
@@ -18,7 +15,7 @@ const teamMembers = [
         name: "Deepak",
         role: "Sales Executive",
         description: "Specializes in residential properties and client relations", 
-        image: deepakImage,
+        image: "/agents/deepak.png",
         phone: "+91 8057235806",
         email: "sales@theprimeinfra.com"
     },
@@ -26,7 +23,7 @@ const teamMembers = [
         name: "Sweety Sharma",
         role: "Sales Executive",
         description: "Expert in property valuation and market analysis",
-        image: sweetyImage,
+        image: "/agents/sweety.png",
         phone: "+91 8057235806",
         email: "sales@theprimeinfra.com"
     }

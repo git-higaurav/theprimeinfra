@@ -1,20 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'Inter';
-  src: url('/assets/fonts/inter/Inter-Regular.ttf') format('truetype');
+  src: url('/fonts/inter/Inter-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Source Sans';
-  src: url('/assets/fonts/source-sans/SourceSans-Regular.ttf') format('truetype');
+  src: url('/fonts/source-sans/SourceSans-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --background: #ffffff;
