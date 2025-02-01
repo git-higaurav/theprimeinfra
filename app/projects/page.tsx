@@ -66,24 +66,24 @@ export default function OnGoingProject() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-8 px-2 sm:py-16 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 {/* Header Section */}
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-center mb-16"
+                    className="text-center mb-8 sm:mb-16"
                 >
-                    <h1 className="text-5xl font-bold text-white mb-6">{projectDetails.title}</h1>
-                    <p className="text-xl text-gray-300">{projectDetails.description}</p>
+                    <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 sm:mb-6">{projectDetails.title}</h1>
+                    <p className="text-lg sm:text-xl text-gray-300">{projectDetails.description}</p>
                 </motion.div>
 
                 {/* Bento Grid Gallery */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6 mb-8 sm:mb-16">
                     <motion.div 
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="col-span-2 row-span-2 relative h-[600px] rounded-3xl overflow-hidden"
+                        className="col-span-2 row-span-2 relative h-[400px] sm:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden"
                     >
                         <Image
                             src={projectDetails.images[0]}
@@ -100,7 +100,7 @@ export default function OnGoingProject() {
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: index * 0.2 }}
-                            className="relative h-[290px] rounded-2xl overflow-hidden"
+                            className="relative h-[200px] sm:h-[290px] rounded-xl sm:rounded-2xl overflow-hidden"
                         >
                             <Image
                                 src={img}
@@ -114,18 +114,18 @@ export default function OnGoingProject() {
                 </div>
 
                 {/* Features Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 mb-8 sm:mb-16">
                     <motion.div 
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700"
+                        className="bg-gray-800/50 backdrop-blur-sm p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-gray-700"
                     >
-                        <h2 className="text-2xl font-bold text-white mb-6">Premium Features</h2>
-                        <div className="grid grid-cols-2 gap-4">
+                        <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Premium Features</h2>
+                        <div className="grid grid-cols-2 gap-3 sm:gap-4">
                             {projectDetails.features?.map((feature, index) => (
-                                <div key={index} className="flex items-center space-x-3">
+                                <div key={index} className="flex items-center space-x-2 sm:space-x-3">
                                     <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                                    <span className="text-gray-300">{feature}</span>
+                                    <span className="text-sm sm:text-base text-gray-300">{feature}</span>
                                 </div>
                             ))}
                         </div>
@@ -134,21 +134,21 @@ export default function OnGoingProject() {
                     <motion.div 
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700"
+                        className="bg-gray-800/50 backdrop-blur-sm p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-gray-700"
                     >
-                        <h2 className="text-2xl font-bold text-white mb-6">Project Details</h2>
-                        <div className="space-y-4">
-                            <div className="flex items-center space-x-4">
+                        <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Project Details</h2>
+                        <div className="space-y-3 sm:space-y-4">
+                            <div className="flex items-center space-x-3 sm:space-x-4">
                                 <span className="text-emerald-400">Location:</span>
-                                <span className="text-gray-300">{projectDetails.location}</span>
+                                <span className="text-sm sm:text-base text-gray-300">{projectDetails.location}</span>
                             </div>
-                            <div className="flex items-center space-x-4">
+                            <div className="flex items-center space-x-3 sm:space-x-4">
                                 <span className="text-emerald-400">Price Range:</span>
-                                <span className="text-gray-300">{projectDetails.priceRange}</span>
+                                <span className="text-sm sm:text-base text-gray-300">{projectDetails.priceRange}</span>
                             </div>
-                            <div className="flex items-center space-x-4">
+                            <div className="flex items-center space-x-3 sm:space-x-4">
                                 <span className="text-emerald-400">Completion:</span>
-                                <span className="text-gray-300">{projectDetails.completionDate}</span>
+                                <span className="text-sm sm:text-base text-gray-300">{projectDetails.completionDate}</span>
                             </div>
                         </div>
                     </motion.div>
@@ -158,16 +158,16 @@ export default function OnGoingProject() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="w-full mb-16"
+                    className="w-full mb-8 sm:mb-16"
                 >
-                    <h2 className="text-2xl font-bold text-white mb-6">Property Layout</h2>
-                    <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700">
+                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Property Layout</h2>
+                    <div className="bg-gray-800/50 backdrop-blur-sm p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-gray-700">
                         <Image 
                             src="/projects/plan.png"
                             alt="Property Layout Map"
                             width={1200}
                             height={800}
-                            className="w-full h-auto rounded-2xl"
+                            className="w-full h-auto rounded-xl sm:rounded-2xl"
                             unoptimized={true}
                         />
                     </div>
@@ -177,11 +177,11 @@ export default function OnGoingProject() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="w-full mb-16"
+                    className="w-full mb-8 sm:mb-16"
                 >
-                    <h2 className="text-2xl font-bold text-white mb-6">Location</h2>
-                    <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700">
-                        <div className="w-full rounded-2xl overflow-hidden">
+                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Location</h2>
+                    <div className="bg-gray-800/50 backdrop-blur-sm p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-gray-700">
+                        <div className="w-full rounded-xl sm:rounded-2xl overflow-hidden">
                             <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d575.8714034280464!2d78.08931610624131!3d30.384069256624098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d798459d27f3%3A0xb6cd28b09fe48000!2sKings%20Residency!5e1!3m2!1sen!2sin!4v1738397366218!5m2!1sen!2sin"
                                 width="100%"
@@ -194,7 +194,7 @@ export default function OnGoingProject() {
                         </div>
                         <button
                             onClick={handleDirectionsClick}
-                            className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg transition-colors duration-300"
+                            className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base transition-colors duration-300"
                         >
                             Get Directions
                         </button>
@@ -205,18 +205,18 @@ export default function OnGoingProject() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
+                    className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-16"
                 >
                     <a
                         href="https://drive.google.com/uc?export=download&id=1FogTQIQsOQVzdqN26I0bdGkdXOMh7d0p"
                         download
-                        className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300 text-center"
+                        className="bg-white text-gray-900 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-colors duration-300 text-center"
                     >
                         Download Brochure
                     </a>
                     <button
                         onClick={handleWhatsAppClick}
-                        className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
+                        className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-colors duration-300"
                     >
                         Contact Us on WhatsApp
                     </button>

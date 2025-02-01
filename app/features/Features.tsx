@@ -1,6 +1,7 @@
 "use client"
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ProjectCard {
     id: number;
@@ -9,11 +10,21 @@ interface ProjectCard {
     image: string;
     location: string;
     status: 'Completed' | 'Ongoing' | 'Upcoming';
+    callToAction? : string;
 }
 
 const projects: ProjectCard[] = [
     {
         id: 1,
+        title: "Kings Residency",
+        description: "2 & 3 BHK Luxury Apartments , Main Rajpur Road.",
+        image: "./assets/Kings.png",
+        location: "Dehradun",
+        status: "Ongoing",
+        callToAction : "Explore Project",
+    },
+    {
+        id: 2,
         title: "Park Avenue",
         description: "2'3'4 BHK aprtment housing society , near malsi dear park, main mussouri road.",
         image: "./assets/ParkAvenue.jpg",
@@ -21,7 +32,7 @@ const projects: ProjectCard[] = [
         status: "Completed"
     },
     {
-        id: 2,
+        id: 3,
         title: "Pacific golf ",
         description: "1,2,3 & penthouse Apartments Near sahastradhara, sahastradhara road",
         image: "./assets/Pacific.png",
@@ -29,7 +40,7 @@ const projects: ProjectCard[] = [
         status: "Completed"
     },
     {
-        id: 3,
+        id: 4,
         title: "Forest residency",
         description: "Studio, 2, 3 bhk aprtment and commercial space.Main mussurie road near dear malsi park. ",
         image: "./assets/Forest.jpg",
@@ -37,7 +48,7 @@ const projects: ProjectCard[] = [
         status: "Completed"
     },
     {
-        id: 4,
+        id: 5,
         title: "Mega county",
         description: "2,3 bhk apartment Main mussurie road, near DIT university. ",
         image: "./assets/Mega.png",
@@ -45,7 +56,7 @@ const projects: ProjectCard[] = [
         status: "Completed"
     },
     {
-        id: 5,
+        id: 6,
         title: "Doon square mall ",
         description: "Studio, service aparrtment, shops, food court and Hotel space IT park, sahastradhara road. ",
         image: "./assets/Doonsquare.png",
@@ -53,7 +64,7 @@ const projects: ProjectCard[] = [
         status: "Completed"
     },
     {
-        id: 6,
+        id: 7,
         title: "ATS heavenly foothills",
         description: "ATS heavenly foothills  platting housing society,Sahastradhara road",
         image: "./assets/ATS.jpg",
@@ -61,7 +72,7 @@ const projects: ProjectCard[] = [
         status: "Completed"
     },
     {
-        id: 7,
+        id: 8,
         title: "Panache valley ",
         description: "Plotting housing society Sahastradhara road, ",
         image: "./assets/Panache.jpg",
@@ -99,13 +110,54 @@ const ProjectCard = ({ project }: { project: ProjectCard }) => {
                     </span>
                 </div>
                 <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex items-center text-gray-500">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span>{project.location}</span>
+                <div className="flex flex-col space-y-4">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center text-gray-500 hover:text-gray-700 transition-colors group">
+                            <svg 
+                                className="w-5 h-5 mr-2 group-hover:text-emerald-500 transition-colors" 
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path 
+                                    strokeLinecap="round" 
+                                    strokeLinejoin="round" 
+                                    strokeWidth="2" 
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" 
+                                />
+                                <path 
+                                    strokeLinecap="round" 
+                                    strokeLinejoin="round" 
+                                    strokeWidth="2" 
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" 
+                                />
+                            </svg>
+                            <span className="font-medium">{project.location}</span>
+                        </div>
+                        {project.callToAction && (
+                            <Link 
+                                href="/projects"
+                                className="inline-flex items-center px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg"
+                            >
+                                {project.callToAction}
+                                <svg 
+                                    className="w-4 h-4 ml-2" 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path 
+                                        strokeLinecap="round" 
+                                        strokeLinejoin="round" 
+                                        strokeWidth="2" 
+                                        d="M9 5l7 7-7 7"
+                                    />
+                                </svg>
+                            </Link>
+                        )}
+                    </div>
                 </div>
+                
             </div>
         </motion.div>
     );

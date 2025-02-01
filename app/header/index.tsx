@@ -172,7 +172,7 @@ export default function Header() {
                             role="dialog"
                             aria-modal="true"
                         >
-                            <div className="flex flex-col h-full pt-20">
+                            <div className="flex flex-col h-dvh pt-20">
                                 {/* Logo Section in Mobile Menu */}
                                 <div className="p-6 border-b border-gray-800">
                                     <Link 
