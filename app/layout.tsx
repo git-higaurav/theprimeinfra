@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import type { Viewport } from 'next'
+import Script from 'next/script'
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -69,6 +70,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+    <head>
+    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-VRH0X1ET79"></Script>
+    <Script>
+       {`
+         window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VRH0X1ET79');
+        
+        `}
+</Script>
+    </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
