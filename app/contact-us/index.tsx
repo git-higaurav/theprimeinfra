@@ -215,11 +215,11 @@ export default function ContactUs() {
                         </div>
                         <div className="bg-[#edc135]/5 p-4 rounded-lg">
                             <p className="text-gray-300 text-sm">
-                                <span className="font-medium text-[#edc135]">Address:</span> 123 Prime Tower, Rajpur Road, Dehradun, Uttarakhand 248001
+                                <span className="font-medium text-[#edc135]">Address:</span> 2nd Floor, Shivam Tower, Rajpur Rd, Jakhan, Dehradun, Uttarakhand 248001
                             </p>
-                            <p className="text-gray-300 text-sm mt-2">
+{/*                             <p className="text-gray-300 text-sm mt-2">
                                 <span className="font-medium text-[#edc135]">Landmark:</span> Near Clock Tower, Opposite City Mall
-                            </p>
+                            </p> */}
                         </div>
                     </motion.div>
                 </div>
