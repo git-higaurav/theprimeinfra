@@ -132,7 +132,7 @@ export default function ContactUs() {
                             <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#edc135] to-[#d4af37] bg-clip-text text-transparent mb-6">Connect With Us</h3>
                             <div className="flex space-x-4">
                                 <motion.a
-                                    href="https://facebook.com"
+                                    href="https://www.facebook.com/theprimeinfra/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-4 bg-[#edc135]/10 rounded-lg text-gray-300 hover:text-[#1877F2] hover:bg-[#1877F2]/10 transition-all duration-300 flex-1 text-center"
@@ -144,7 +144,7 @@ export default function ContactUs() {
                                     <span className="text-sm mt-2 block">Facebook</span>
                                 </motion.a>
                                 <motion.a
-                                    href="https://instagram.com"
+                                    href="https://instagram.com/theprimeinfra"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-4 bg-[#edc135]/10 rounded-lg text-gray-300 hover:text-[#E4405F] hover:bg-[#E4405F]/10 transition-all duration-300 flex-1 text-center"
