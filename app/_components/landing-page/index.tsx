@@ -7,9 +7,9 @@ import Link from 'next/link';
 export default function LandingPage() {
     return (
         <main className="min-h-screen">
-            <section className="relative h-screen bg-[#12192b] overflow-hidden">
+            <section id="landing" className="relative h-screen bg-[#12192b] overflow-hidden">
                 {/* WhatsApp Floating Button */}
-                <motion.a
+                {/* <motion.a
                     href="https://wa.me/918057235806"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -18,7 +18,7 @@ export default function LandingPage() {
                     whileTap={{ scale: 0.9 }}
                 >
                     <MessageCircle className="w-6 h-6 text-white" />
-                </motion.a>
+                </motion.a> */}
 
                 {/* Animated Background Shapes */}
                 <motion.div

@@ -3,46 +3,46 @@ import { motion } from 'framer-motion';
 
 export default function AboutUs() {
     return (
-        <section className="relative py-24 px-4 bg-gradient-to-b from-[#12192b] to-[#1a2338] overflow-hidden min-h-screen">
+        <section id='about' className="relative py-24 px-4 bg-gradient-to-b from-[#0c1219] to-[#1a2338] overflow-hidden min-h-screen">
             {/* Animated Background Elements */}
             <motion.div
                 animate={{
                     rotate: [0, 360],
-                    scale: [1, 1.1, 1],
+                    scale: [1, 1.2, 1],
                 }}
                 transition={{
-                    duration: 25,
+                    duration: 30,
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "easeInOut"
                 }}
-                className="absolute top-20 right-20 w-72 h-72 rounded-full bg-gradient-to-r from-[#edc135]/5 to-transparent blur-2xl"
+                className="absolute top-20 right-20 w-72 h-72 rounded-full bg-gradient-to-r from-[#edc135]/10 to-transparent blur-3xl"
             />
             <motion.div
                 animate={{
                     rotate: [360, 0],
-                    scale: [1, 1.2, 1],
+                    scale: [1, 1.3, 1],
                 }}
                 transition={{
-                    duration: 20,
+                    duration: 25,
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "easeInOut"
                 }}
-                className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-gradient-to-r from-[#edc135]/10 to-transparent blur-2xl"
+                className="absolute -bottom-32 -left-32 w-[30rem] h-[30rem] rounded-full bg-gradient-to-r from-[#edc135]/15 to-transparent blur-3xl"
             />
 
             <div className="container mx-auto relative z-10 max-w-7xl">
                 {/* Hero Section */}
                 <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
                     className="max-w-4xl mx-auto text-center mb-20"
                 >
-                    <span className="text-[#edc135] text-lg font-medium mb-4 block">Welcome to Prime Infra</span>
-                    <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+                    <span className="text-[#edc135] text-base font-semibold tracking-wider mb-4 block uppercase">Welcome to Prime Infra</span>
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
                         Transforming Dreams Into Addresses
                     </h1>
-                    <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                    <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto font-light">
                         With over a decade of excellence in Dehradun's real estate market, we bring expertise, trust, and personalized service to every client relationship.
                     </p>
                 </motion.div>
@@ -51,31 +51,31 @@ export default function AboutUs() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-24">
                     {/* Why Choose Us Section */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="flex flex-col space-y-8"
+                        transition={{ duration: 1, delay: 0.2 }}
+                        className="flex flex-col space-y-6"
                     >
                         <div className="flex items-center space-x-4 mb-2">
-                            <div className="h-1 w-12 bg-[#edc135]"></div>
-                            <h2 className="text-3xl font-bold text-white">Why Choose Us</h2>
+                            <div className="h-0.5 w-12 bg-[#edc135]"></div>
+                            <h2 className="text-2xl font-bold text-white tracking-tight">Why Choose Us</h2>
                         </div>
-                        <div className="bg-white/[0.03] backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-[#edc135]/30 transition-all duration-500 flex-1 group">
+                        <div className="bg-white/[0.02] backdrop-blur-2xl p-8 rounded-2xl border border-white/5 hover:border-[#edc135]/20 transition-all duration-700 flex-1 group shadow-xl">
                             <div className="space-y-8">
-                                <div className="group-hover:translate-x-2 transition-transform duration-300">
-                                    <h3 className="text-xl font-semibold text-[#edc135] mb-3">Local Market Mastery</h3>
+                                <div className="group-hover:translate-x-2 transition-transform duration-500">
+                                    <h3 className="text-xl font-semibold text-[#edc135] mb-2">Local Market Mastery</h3>
                                     <p className="text-gray-300 leading-relaxed">
                                         Unparalleled understanding of Dehradun's real estate dynamics, ensuring optimal investment decisions.
                                     </p>
                                 </div>
-                                <div className="group-hover:translate-x-2 transition-transform duration-300 delay-100">
-                                    <h3 className="text-xl font-semibold text-[#edc135] mb-3">Client-First Approach</h3>
+                                <div className="group-hover:translate-x-2 transition-transform duration-500 delay-100">
+                                    <h3 className="text-xl font-semibold text-[#edc135] mb-2">Client-First Approach</h3>
                                     <p className="text-gray-300 leading-relaxed">
                                         Dedicated to understanding your unique needs and delivering personalized solutions.
                                     </p>
                                 </div>
-                                <div className="group-hover:translate-x-2 transition-transform duration-300 delay-200">
-                                    <h3 className="text-xl font-semibold text-[#edc135] mb-3">Transparent Process</h3>
+                                <div className="group-hover:translate-x-2 transition-transform duration-500 delay-200">
+                                    <h3 className="text-xl font-semibold text-[#edc135] mb-2">Transparent Process</h3>
                                     <p className="text-gray-300 leading-relaxed">
                                         Clear communication and honest guidance throughout your property journey.
                                     </p>
@@ -86,16 +86,16 @@ export default function AboutUs() {
 
                     {/* Our Services Section */}
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
+                        initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="flex flex-col space-y-8"
+                        transition={{ duration: 1, delay: 0.4 }}
+                        className="flex flex-col space-y-6"
                     >
                         <div className="flex items-center space-x-4 mb-2">
-                            <div className="h-1 w-12 bg-[#edc135]"></div>
-                            <h2 className="text-3xl font-bold text-white">Our Services</h2>
+                            <div className="h-0.5 w-12 bg-[#edc135]"></div>
+                            <h2 className="text-2xl font-bold text-white tracking-tight">Our Services</h2>
                         </div>
-                        <div className="bg-gradient-to-br from-[#1a2338]/50 to-[#1f2b4d]/50 p-8 rounded-2xl shadow-lg border border-white/10 hover:border-[#edc135]/30 transition-all duration-500 flex-1 group">
+                        <div className="bg-gradient-to-br from-[#1a2338]/30 to-[#1f2b4d]/30 p-8 rounded-2xl shadow-xl border border-white/5 hover:border-[#edc135]/20 transition-all duration-700 flex-1 group">
                             <ul className="space-y-8">
                                 {[
                                     {
@@ -111,7 +111,7 @@ export default function AboutUs() {
                                         description: "Comprehensive assistance from listing to closing"
                                     }
                                 ].map((service, index) => (
-                                    <li key={index} className="flex items-start space-x-4 group-hover:translate-x-2 transition-transform duration-300" style={{ transitionDelay: `${index * 100}ms` }}>
+                                    <li key={index} className="flex items-start space-x-4 group-hover:translate-x-2 transition-transform duration-500" style={{ transitionDelay: `${index * 100}ms` }}>
                                         <span className="w-2 h-2 bg-[#edc135] rounded-full mt-2.5 flex-shrink-0"></span>
                                         <div>
                                             <h3 className="text-xl font-semibold text-[#edc135] mb-2">{service.title}</h3>
@@ -126,13 +126,13 @@ export default function AboutUs() {
 
                 {/* Stats Section */}
                 <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
+                    transition={{ duration: 1, delay: 0.6 }}
                     className="text-center"
                 >
-                    <h2 className="text-3xl font-bold text-white mb-16">Our Impact in Numbers</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <h2 className="text-2xl font-bold text-white mb-12 tracking-tight">Our Impact in Numbers</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {[
                             { value: "10+", label: "Years of Excellence" },
                             { value: "500+", label: "Successful Deals" },
@@ -141,11 +141,12 @@ export default function AboutUs() {
                         ].map((stat, index) => (
                             <motion.div
                                 key={index}
-                                whileHover={{ scale: 1.05 }}
-                                className="bg-white/[0.03] backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-[#edc135]/30 transition-all duration-300"
+                                whileHover={{ scale: 1.03, y: -3 }}
+                                transition={{ duration: 0.3 }}
+                                className="bg-white/[0.02] backdrop-blur-2xl p-6 rounded-2xl border border-white/5 hover:border-[#edc135]/20 transition-all duration-500 shadow-xl"
                             >
-                                <div className="text-4xl font-bold text-[#edc135] mb-3">{stat.value}</div>
-                                <p className="text-gray-300 text-lg">{stat.label}</p>
+                                <div className="text-3xl font-bold text-[#edc135] mb-2">{stat.value}</div>
+                                <p className="text-gray-300 text-sm font-medium">{stat.label}</p>
                             </motion.div>
                         ))}
                     </div>

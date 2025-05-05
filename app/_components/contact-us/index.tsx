@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function ContactUs() {
     return (
-        <section className="relative min-h-screen py-12 md:py-20 px-4 bg-gradient-to-br from-[#0f172a] to-[#1e293b] overflow-hidden">
+        <section id='contact' className="relative min-h-screen py-12 md:py-20 px-4 bg-gradient-to-br from-[#0f172a] to-[#1e293b] overflow-hidden">
             {/* Animated Background Elements */}
             <motion.div
                 animate={{
